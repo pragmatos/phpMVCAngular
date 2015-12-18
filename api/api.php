@@ -27,15 +27,7 @@ class Api {
         if($_SERVER['REQUEST_METHOD'] == "DELETE"){
             return Feedback_Model::DeleteFeedback($id);
         }
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
-            $data = json_decode(file_get_contents("php://input"), true);
-            return Products_Model::InsertProduct($data);
-            
-        }
-        if($_SERVER['REQUEST_METHOD'] == "PUT"){
-            $data = json_decode(file_get_contents("php://input"), true);
-            return Products_Model::UpdateProduct($data,$id);
-        }
+        
         if(isset($id)){
             return Products_Model::GetProductById($id);
         }
