@@ -1,9 +1,7 @@
 <?php
 class Api {
 
-    public function auth(){
-        return array('name'=>"BAD",'logedIn'=>TRUE) ;
-    }
+   
     public function products($id = null){
         if($_SERVER['REQUEST_METHOD'] == "DELETE"){
             return Products_Model::DeleteProduct($id);
