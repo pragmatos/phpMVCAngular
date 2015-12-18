@@ -1,6 +1,6 @@
 <?php
    $SiteParams = array(
-      'SiteName' => 'ПІ-39',
+      'SiteName' => 'Магазин',
       'Keywords' => 'Ключ. слова',
       'Description' => 'Описание',
       'Title'   => 'Главная страница'
