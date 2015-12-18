@@ -1,0 +1,54 @@
+<div class="cl">&nbsp;</div>
+<div id="content" style="width: 988px;">
+<div class="box">
+    
+    <!-- Box Head -->
+    <div class="box-head">
+        <h2 class="left">Заказы | Количество не обработаных заказов: <span class="green">{{(orders | filter :{made : 0}).length}}</span></h2>
+            
+            <div class="right">
+                    <label>Поиск по названии</label>
+                    <input type="text" ng-model="name" class="field small-field" />
+
+            </div>
+    </div>
+    <!-- End Box Head -->	
+
+    <!-- Table -->
+
+
+    <div class="box"><div class="table">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+                
+                 <th>ID</th>
+                <th>Пользователь</th>
+                <th>Продукти</th>
+                <th>Количество</th>
+                <th>Сумма</th>
+                 <th>Дата</th>
+                <th>Статус</th>
+                <th width="110" class="ac">Редактирования</th>
+        </tr>
+        <tr ng-repeat="p in orders| filter:name |orderBy:'made'" ng-class="{'odd':$odd ,'green':p.made == 0}">
+               
+                <td>{{p.id}}</td>
+                <td><h3><a href="#/users/edit/{{p.user_id}}"> {{p.username}}</a></h3></td>
+                <td><i ng-repeat="i in p.products.items">{{i.name}}</i></td>
+                <td>{{p.products.items.length}}</td>
+                <td>{{p.products.price}}</td>
+                <td>{{p.date}}</td>
+                <td><label>
+                        <input type="checkbox" ng-change="UpdateStatus(p)" ng-model="p.made"
+                                ng-true-value="'1'" ng-false-value="'0'"/>
+                        {{p.made==0?'Не просмотрено': "Отправлено"}}
+                     </label>
+                     </td>
+  
+                <td><a href="#" ng-click="delete(p.id)" class="ico del">Удалить</a></td>
+        </tr>
+        
+</table></div></div></div></div>
+
+<div class="cl">&nbsp;</div>	
+

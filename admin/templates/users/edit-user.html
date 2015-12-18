@@ -1,0 +1,33 @@
+<div class="table">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>ID</th>
+            <td><input readonly type="text" ng-model="user.id"/></td>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <td><input type="text" ng-model="user.name"/></td>
+        </tr>
+         <tr>
+            <th>Login</th>
+            <td><input type="text" ng-model="user.login"/></td>
+        </tr>
+         <tr>
+            <th>Город</th>
+            <td><textarea ng-model="user.city"></textarea></td>
+        </tr>
+         <tr>
+            <th>Емейл</th>
+            <td><input ng-model="user.email"/></td>
+        </tr>
+        <tr>
+            <th>Роль</th>
+            <td><input ng-model="user.role"/></td>
+        </tr>
+        
+         <tr>
+            <th></th>
+            <td><button ng-click="UpdateUser(user)">Обновить</button><a href="#">Отмена</a></td>
+        </tr>
+</table>
+</div>

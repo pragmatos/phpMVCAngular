@@ -1,0 +1,48 @@
+<div class="cl">&nbsp;</div>
+<div id="content" >
+<div class="box">
+    
+    <!-- Box Head -->
+    <div class="box-head">
+            <h2 class="left">Вопросы</h2>
+
+            <div class="right">
+                    <label>Поиск по названии</label>
+                    <input type="text" ng-model="name" class="field small-field" />
+
+            </div>
+    </div>
+    <!-- End Box Head -->	
+
+    <!-- Table -->
+
+
+    <div class="box"><div class="table">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+                
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Текст</th>
+                <th width="110" class="ac">Редактирования</th>
+        </tr>
+        <tr ng-repeat="p in feedback| filter:name" ng-class="{'odd':$odd}">
+                <td>{{p.id}}</td>
+                
+                <td><h3>{{p.name}}</h3></td>
+                <td>{{p.email}}</td>
+                <td>{{p.phone}}</td>
+                <td style="min-width: 250px;" ><p>{{p.text}}</p></td>
+                <td ><a href="#" ng-click="delete(p.id)" class="ico del">Удалить</a></td>
+        </tr>
+</table></div></div></div></div>
+<div id="sidebar">
+				
+				<!-- Box -->
+				
+				<!-- End Box -->
+			</div>
+<div class="cl">&nbsp;</div>	
+
