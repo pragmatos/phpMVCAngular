@@ -71,15 +71,7 @@ app.service('Feedback',function ($http){
     this.GetFeedback = function(){
         return $http.get('api/feedback');
      };
-    this.GetUserById = function(id){
-        return $http.get('api/users/'+id);
-    };
-    this.UpdateStatus = function(data){
-       return $http.put('api/orders/'+data.id, data.made);
-    };
-    this.CreateUser = function (data){
-        return $http.post('api/users/', data);
-    };
+  
     this.DeleteFeedback = function (id){
         return $http.delete('api/feedback/'+id);
     };
